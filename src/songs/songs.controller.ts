@@ -20,7 +20,7 @@ export class SongsController {
 
     @Put("/:id")
     update(@Param('id') id: number) {
-        return "Update Song BY Id: " + id;
+        return "Update Song By Id: " + id;
     }
 
     @Delete("/:id")

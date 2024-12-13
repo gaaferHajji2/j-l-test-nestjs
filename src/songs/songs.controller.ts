@@ -1,6 +1,8 @@
 import { Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { SongsService } from './songs.service';
 
+import { v4 }  from 'uuid'
+
 @Controller('songs')
 export class SongsController {
 
@@ -20,12 +22,12 @@ export class SongsController {
 
     @Post()
     create(){
-        return this.songsService.create();
+        return this.songsService.create("Jafar-Loka-New-Song: " + v4());
     }
 
     @Put("/:id")
     update(@Param('id') id: number) {
-        return this.songsService.update(id);
+        return this.songsService.update(id, "Jafar-Loka-Updated-Song: " + v4());
     }
 
     @Delete("/:id")
